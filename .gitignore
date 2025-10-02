@@ -6,6 +6,10 @@ tb_logger/*
 wandb/*
 tmp/*
 
+# Gradio temporary files
+input_*.png
+output_*
+
 version.py
 
 # Byte-compiled / optimized / DLL files
