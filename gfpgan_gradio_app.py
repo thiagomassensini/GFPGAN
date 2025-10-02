@@ -43,7 +43,7 @@ def enhance_face(input_image):
             return gr.update(value=None, visible=False, label="Erro: Não foi possível restaurar a imagem.")
     except Exception as e:
         print(f"[GFPGAN] Erro ao rodar GFPGAN: {e}")
-    return gr.update(value=None, visible=False, label=f"Erro ao processar: {e}")
+        return gr.update(value=None, visible=False, label=f"Erro ao processar: {e}")
     finally:
         if os.path.exists(input_path):
             os.remove(input_path)
