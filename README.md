@@ -1,22 +1,97 @@
+
 <p align="center">
   <img src="assets/gfpgan_logo.png" height=130>
 </p>
 
-## <div align="center"><b><a href="README.md">English</a> | <a href="README_CN.md">简体中文</a></b></div>
-
 <div align="center">
-<!-- <a href="https://twitter.com/_Xintao_" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/17445847/187162058-c764ced6-952f-404b-ac85-ba95cce18e7b.png" width="4%" alt="" />
-</a> -->
+<b>Documentação em Português Brasileiro 🇧🇷</b>
+</div>
 
 [![download](https://img.shields.io/github/downloads/TencentARC/GFPGAN/total.svg)](https://github.com/TencentARC/GFPGAN/releases)
 [![PyPI](https://img.shields.io/pypi/v/gfpgan)](https://pypi.org/project/gfpgan/)
 [![Open issue](https://img.shields.io/github/issues/TencentARC/GFPGAN)](https://github.com/TencentARC/GFPGAN/issues)
 [![Closed issue](https://img.shields.io/github/issues-closed/TencentARC/GFPGAN)](https://github.com/TencentARC/GFPGAN/issues)
 [![LICENSE](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/TencentARC/GFPGAN/blob/master/LICENSE)
-[![python lint](https://github.com/TencentARC/GFPGAN/actions/workflows/pylint.yml/badge.svg)](https://github.com/TencentARC/GFPGAN/blob/master/.github/workflows/pylint.yml)
-[![Publish-pip](https://github.com/TencentARC/GFPGAN/actions/workflows/publish-pip.yml/badge.svg)](https://github.com/TencentARC/GFPGAN/blob/master/.github/workflows/publish-pip.yml)
-</div>
+
+---
+
+# GFPGAN - Restauração de Rostos com IA
+
+GFPGAN é um algoritmo prático para restauração de rostos em fotos antigas ou de baixa qualidade, utilizando redes generativas (GANs). O projeto permite restaurar rostos de forma automática e com alta qualidade.
+
+---
+
+## 🚨 Aviso Importante
+
+**O GFPGAN só é compatível com Python 3.7 ou 3.8!**
+
+Recomenda-se o uso de um ambiente virtual (venv ou conda) para evitar conflitos de dependências.
+
+---
+
+## 💻 Instalação (Windows e Linux)
+
+1. Instale o Python 3.7 ou 3.8 ([Download Python](https://www.python.org/downloads/))
+2. (Opcional, mas recomendado) Crie e ative um ambiente virtual:
+  ```sh
+  python -m venv venv
+  venv\Scripts\activate  # No Windows
+  source venv/bin/activate  # No Linux
+  ```
+3. Instale as dependências:
+  ```sh
+  pip install -r requirements.txt
+  python setup.py develop
+  pip install gradio
+  ```
+4. Baixe o modelo pré-treinado (exemplo para v1.3):
+  ```sh
+  curl -L -o experiments/pretrained_models/GFPGANv1.3.pth https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.3.pth
+  ```
+
+---
+
+## 🖼️ Interface Gráfica Web (Gradio)
+
+Uma interface web moderna foi adicionada para facilitar o uso do GFPGAN. Basta rodar o comando abaixo e acessar pelo navegador:
+
+```sh
+python gfpgan_gradio_app.py
+```
+
+O Gradio irá mostrar um link local (ex: http://127.0.0.1:7860) para você acessar a interface. Faça upload da foto, aguarde o processamento e baixe o resultado.
+
+---
+
+## ❗ Dicas para Windows
+
+- Sempre use Python 3.7 ou 3.8
+- Se possível, utilize ambiente virtual
+- Se aparecer erro de dependência, reinstale as bibliotecas usando o requirements.txt
+
+---
+
+## 🤖 Uso em Linha de Comando (opcional)
+
+Também é possível rodar o GFPGAN via terminal:
+
+```sh
+python inference_gfpgan.py -i inputs/whole_imgs -o results -v 1.3 -s 2
+```
+
+Veja mais opções de uso no início do arquivo `inference_gfpgan.py` ou na documentação original.
+
+---
+
+## 📄 Licença
+
+GFPGAN é distribuído sob a licença Apache 2.0.
+
+---
+
+## 🙋‍♂️ Contato
+
+Em caso de dúvidas, abra uma issue no GitHub ou procure o mantenedor do repositório.
 
 1. :boom: **Updated** online demo: [![Replicate](https://img.shields.io/static/v1?label=Demo&message=Replicate&color=blue)](https://replicate.com/tencentarc/gfpgan). Here is the [backup](https://replicate.com/xinntao/gfpgan).
 1. :boom: **Updated** online demo: [![Huggingface Gradio](https://img.shields.io/static/v1?label=Demo&message=Huggingface%20Gradio&color=orange)](https://huggingface.co/spaces/Xintao/GFPGAN)
